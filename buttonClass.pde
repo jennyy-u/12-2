@@ -21,15 +21,21 @@ button blackButton;
 
 int bkg;
 
+PImage buttonPic;
+
 void setup() {
   size(600, 600);
+  buttonPic = loadImage("sunImage.jpg");
+  imageMode(CENTER);
   rectMode(CENTER);
   blueButton = new button("blue", 150, 100, 120, 120, blue, yellow);
   pinkButton = new button("pink", 150, 280, 120, 120, pink, blue);
   yellowButton = new button("yellow", 150, 460, 120, 120, yellow, pink);
-  whiteButton = new button("white", 450, 200, 150, 150, white, black);
+  whiteButton = new button(buttonPic, 450, 200, 150, 150, white, black);
   blackButton = new button("black", 450, 400, 150, 150, black, white);
   bkg = white;
+  
+  
 }
 
 
