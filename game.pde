@@ -6,7 +6,7 @@ void game() {
 
   //random
   textFont(bubblegum);
-  if (wait > 0 && wait < 180) {
+  if (wait > 0 && wait < 120) {
     textSize(textS);
     textS = textS + 1;
   }

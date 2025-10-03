@@ -13,6 +13,11 @@ void gameover() {
   textSize(50);
   text("score: ", 370, 370);
   text (score, 480, 370);
+  
+  textFont(cheri);
+  textSize(50);
+  text("best score: ", 350, 450);
+  text (bestScore, 520, 450);
 
   //back to intro button
   tactileReturnIntro(300, 630, 200, 70);
