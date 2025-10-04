@@ -167,8 +167,9 @@ void newPuzzle() {
 }
 
 void checkScore() {
-  if (score > bestScore) {
+  if (score >= bestScore) {
     bestScore = score;
   }
 }
+
 
