@@ -62,7 +62,6 @@ int numOfFrames;
 int f;
 
 //timer related variables
-float time;
 float wait;
 float textS;
 
@@ -73,8 +72,6 @@ void setup() {
 
   mode = GAME;
 
-  score = 0;
-  bestScore = 0;
   
 
   //font
@@ -93,7 +90,6 @@ void setup() {
     gF++;
   }
 
-  time = millis();
   wait = 120;
   textS = 30;
 
@@ -128,13 +124,12 @@ void mouseReleased() {
   } else if (mouseX > 0 && mouseX < width/2 && mouseY > 0 && mouseY < height && mode == GAME) {
     if (randomColor == randomWord) {
       fail.play();
-      //fail.amp(0.5);
+      checkScore();
       mode = GAMEOVER;
     } else if (randomColor != randomWord) {
       success.play();
       //success.amp(0.5);
       score = score + 1;
-      bestScore = bestScore + 1;
       textS = 30;
       wait = 120;
       newPuzzle();
@@ -143,12 +138,13 @@ void mouseReleased() {
     if (randomColor == randomWord) {
       success.play();
       score = score + 1;
-      bestScore = bestScore + 1;
+
       textS = 30;
       wait = 120;
       newPuzzle();
     } else if (randomColor != randomWord) {
       fail.play();
+      checkScore();
       mode = GAMEOVER;
     }
   }
@@ -170,5 +166,9 @@ void newPuzzle() {
   }
 }
 
-//randomWord = (int) random (0, 7);
-//randomColor = (int) random (0, 7);
+void checkScore() {
+  if (score > bestScore) {
+    bestScore = score;
+  }
+}
+
