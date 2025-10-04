@@ -70,7 +70,7 @@ void setup() {
   size(800, 800, FX2D);
   background(255);
 
-  mode = GAME;
+  mode = INTRO;
 
   
 
@@ -171,5 +171,6 @@ void checkScore() {
     bestScore = score;
   }
 }
+
 
 
